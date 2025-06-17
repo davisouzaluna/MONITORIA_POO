@@ -21,6 +21,15 @@ public class Conta implements Serializable {
 
     public Conta(String numeroConta, BigDecimal saldo, boolean status, LocalDateTime dataAbertura) {
         this.numeroConta = numeroConta;
+
+        /*
+        A expressão abaixo é a mesma que:
+        if (saldo == null) {
+            this.saldo = BigDecimal.ZERO;
+        } else {
+            this.saldo = saldo;
+        }
+        */
         this.saldo = saldo == null ? BigDecimal.ZERO : saldo;
         this.status = status;
         this.dataAbertura = dataAbertura == null ? LocalDateTime.now() : dataAbertura;
